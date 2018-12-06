@@ -2,9 +2,9 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/client/public/index.html');
-});
+// app.get('/', function(req, res){
+//     res.sendFile(__dirname + '/client/public/index.html');
+// });
 
 // User connects and disconnects
 io.on('connection', function(socket){
@@ -20,6 +20,6 @@ io.on('connection', function(socket){
     });
   });
 
-http.listen(3000, function(){
+http.listen(8080, function(){
   console.log('listening on *:8080');
 });
