@@ -5,4 +5,39 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+.main .main__users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 95vh;
+  border-bottom: 1px solid black;
+}
+
+.main .main__users .main__users-online {
+  width: 50%;
+  border-right: 1px solid black;
+  padding-left: 2%;
+}
+
+.main .main__users .main__users-chatroom {
+  width: 50%;
+  padding-left: 2%;
+}
+
+.main .main__chatbar-form {
+  width: 100%;
+}
+
+.main .main__chatbar-form .main__chatbar--form-input {
+  width: 90%;
+  padding-left: 1%;
+}
+
+.main .main__chatbar-form .main__chatbar--form-msg-submit {
+  width: 10%;
+}
 /*# sourceMappingURL=styles.css.map */
