@@ -24,13 +24,17 @@
     }
     .main__chatbar-form {
         width: 100%;
-        .main__chatbar--form-input {
-            width: 90%;
+        .main__chatbar--name-input{
+            width: 100%;
             padding-left: 1%;
         }
-        .main__chatbar--form-msg-submit {
-            width: 10%;
+        .main__chatbar--form-input {
+            width: 100%;
+            padding-left: 1%;
         }
+    }
+    .main__chatbar--form-msg-submit {
+        width: 100%;
     }
 }
 

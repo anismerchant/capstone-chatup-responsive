@@ -32,12 +32,17 @@
   width: 100%;
 }
 
-.main .main__chatbar-form .main__chatbar--form-input {
-  width: 90%;
+.main .main__chatbar-form .main__chatbar--name-input {
+  width: 100%;
   padding-left: 1%;
 }
 
-.main .main__chatbar-form .main__chatbar--form-msg-submit {
-  width: 10%;
+.main .main__chatbar-form .main__chatbar--form-input {
+  width: 100%;
+  padding-left: 1%;
+}
+
+.main .main__chatbar--form-msg-submit {
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
