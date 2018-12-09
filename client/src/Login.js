@@ -9,7 +9,7 @@ class Login extends Component {
     }
   
     submitHandler() {
-      if (this.usernameInput.value === '') {
+      if ((this.usernameInput.value).trim() === '' || (this.usernameInput.value).trim() === null || this.usernameInput.value === ' ' ) {
         alert("Pleae enter your username...");
         return;
       } else {

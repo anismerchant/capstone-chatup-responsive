@@ -58,7 +58,7 @@ class Main extends Component {
   sendMessage = (e) => {
     e.preventDefault();
     let userInput = this.messageInput.current.value;
-    if (this.messageInput.current.value === '') {
+    if ((this.messageInput.current.value).trim() === '' || (this.messageInput.current.value).trim() === null || this.messageInput.current.value === ' ' ) {
       alert("Pleae enter a message...");
       return;
     } else {
