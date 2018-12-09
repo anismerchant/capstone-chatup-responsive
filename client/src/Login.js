@@ -39,12 +39,14 @@ class Login extends Component {
                                 onblur="this.placeholder = 'ENTER YOUR NAME'"
                                 ref={input => {this.usernameInput = input}}
                             />
-                            {/* <input
+                            {/* // For future development.
+                                <input
                                 type="password"
                                 className="form-control"
                                 onChange={this.handlerPasswordChange.bind(this)}
                                 ref={this.userpasswordInput}
-                            /> */}
+                                /> 
+                            */}
                             <button
                                 type="submit"
                                 className="main__login--button"
