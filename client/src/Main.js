@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 
-let socket = io(`http://localhost:8080`);
+import ChatChildContainer from './ChatChildContainer';
+import Login from './Login';
+
+//const io = require('socket.io-client');
+let socket = io.connect(`http://localhost:8080`);
+let time = new Date().getTime();
 
 class Main extends Component {
   constructor(props) {
@@ -10,57 +15,89 @@ class Main extends Component {
     // Creating a 'ref' for message input and storing
     // it in 'this', which is the instance that's created.
     this.messageInput = React.createRef();
-  
+
     this.state = {
       url: "http://localhost:8080",
       messages: [],
-      username: "",
+      userName: "",
+      users:[],
       showLogin: true,
     }
+  }
+
+  componentDidMount() {
+    this.initSocket();
+
+    this.io.on("message", (data) => {
+      console.log("Incoming username from other user: " + data.userName);
+      console.log("Incoming Message from other user: " + data.msg);
+      console.log("Incoming timestamp from other user: " + data.timeStamp);
+      console.log("Incoming SocketId from other user: " + data.socketId);
+      this.addMessages(data);
+    })
+
+    this.io.on("loggedInUser", (data) => {
+      console.log("Incoming username from other user: " + data.userName);
+      this.allLoggedInUser(data);
+    })
+  }
+
+  addMessages = (data) => {
+  
+    let newMsg = {userName: data.userName, message: data.msg, timeStamp: data.timeStamp, socketId: data.socketId};
+    this.setState((prevState) => ({
+      messages: [...prevState.messages, newMsg]}
+    ))
   }
 
   initSocket() {
     this.io = io(this.state.url);
   }
 
+  //1. User enters chatroom
   sendMessage = (e) => {
     e.preventDefault();
     let userInput = this.messageInput.current.value;
-    socket.emit("message", userInput);
+    if (this.messageInput.current.value === '') {
+      alert("Pleae enter a message...");
+      return;
+    } else {
+      socket.emit("message", {userName: this.state.userName, msg: userInput, timeStamp: time, socketId:socket.id});
+      this.messageInput.current.value="";
+    }
   }
 
-  addMessageToGroup = (msg) => {
+  //2. Hide login component after user shares name
+  hideLogin = () => {
+    this.setState({
+      showLogin: false
+    });
+  }
+
+  loggedInUser = (user) => {
+    this.setState({userName: user}, () => {
+      socket.emit("loggedInUser", {userName: user} )
+    });
+  }
+
+  allLoggedInUser = (user) => {
+    let newUser = {userName: user.userName}
     this.setState((prevState) => ({
-      messages: [...prevState.messages, msg]}
+      users: [...prevState.users, newUser]}
     ))
-  }
-  
-  componentDidMount() {
-    this.initSocket();
-
-    // Message from other users
-    this.io.on("message", (msg) => {
-      // console.log("Incoming Message from other user: " + msg);
-      this.addMessageToGroup(msg);
-    })
-
   }
   
   render() {
     return (
       <div className="main">
-        <div className="main__users">
-          <div className="main__users-online">
-            <h1 className="main__users-heading">Currently Online</h1>
-            <div className="main__users-messages"></div>
-          </div>
-          <div className="main__users-chatroom">Chat Room</div>
+        {this.state.showLogin && <Login hideLogin={this.hideLogin} loggedInUser={this.loggedInUser}/>}
+        <ChatChildContainer messages={this.state.messages} users={this.state.users} />
+        <div className="main__chatbar--container">
+          <form className="main__chatbar-form" onSubmit={this.sendMessage}>
+              <input className="main__chatbar--form-input" type="text" placeholder="Start chatting..." ref={this.messageInput}/>
+              <button className="main__chatbar--form-msg-submit" type="submit">SEND</button> 
+          </form>
         </div>
-        <form className="main__chatbar-form" onClick={this.sendMessage}>
-            <input className="main__chatbar--name-input" type="text" placeholder="Your name..."/>
-            <input className="main__chatbar--form-input" type="text" placeholder="Start chatting..." ref={this.messageInput}/>
-        </form>
-        <button className="main__chatbar--form-msg-submit" type="submit">SEND</button> 
       </div>
     );
   }
