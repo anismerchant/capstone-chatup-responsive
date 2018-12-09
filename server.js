@@ -1,25 +1,30 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 8080;
+const http = require("http").createServer(app);
+const io = require("socket.io")(http);
 
-// app.get('/', function(req, res){
-//     res.sendFile(__dirname + '/client/public/index.html');
-// });
+let users = [];
+let messages = [];
 
-// User connects and disconnects
-io.on('connection', function(socket){
-    console.log('a user connected');
-    socket.on('disconnect', function(){
-      console.log('user disconnected');
-    });
-    // Server receive message from user
-    socket.on('message', function(msg){
-        console.log('message: ' + msg);
-        // Server get the message from user and sends it back to everyone connected  
-        io.emit('message', msg);
-    });
-  });
+io.on('connection', (socket) => {
 
-http.listen(8080, function(){
-  console.log('listening on *:8080');
+    socket.on("message", (message) => {
+        console.log("Response from client: ", message);
+        messages.push(message); 
+        // socket.broadcast.emit("message", message);
+        io.sockets.emit("message", message);
+    })
+
+    socket.on("loggedInUser", (loggedInUser) => {
+        console.log("Response from client: ", loggedInUser);
+        users.push(loggedInUser);
+        // socket.broadcast.emit("loggedInUser", loggedInUser);
+        io.sockets.emit("loggedInUser", loggedInUser);
+    })
+});
+
+// Listening on Port 
+http.listen(port, () => {
+    console.log(`Server is listening on port: ${port}`)
 });
