@@ -23,7 +23,7 @@ class Login extends Component {
     render() {
         return (
             <div className="main__login--containter">
-                <div className="main__login--area">
+                <form className="main__login--area" onSubmit={this.submitHandler.bind(this)}>
                     <input className="main__login--name-input"
                         name="username"
                         type="text"
@@ -38,11 +38,10 @@ class Login extends Component {
                         ref={this.userpasswordInput}
                     /> */}
                     <button
-                        type="button"
+                        type="submit"
                         className="btn btn-success btn-block"
-                        onClick={this.submitHandler.bind(this)}
                     >Login</button>
-                </div>
+                </form>
             </div>
         );
     }
