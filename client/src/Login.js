@@ -23,25 +23,35 @@ class Login extends Component {
     render() {
         return (
             <div className="main__login--containter">
-                <form className="main__login--area" onSubmit={this.submitHandler.bind(this)}>
-                    <input className="main__login--name-input"
-                        name="username"
-                        type="text"
-                        className="form-control"
-                        placeholder=" Your name..."
-                        ref={input => {this.usernameInput = input}}
-                    />
-                    {/* <input
-                        type="password"
-                        className="form-control"
-                        onChange={this.handlerPasswordChange.bind(this)}
-                        ref={this.userpasswordInput}
-                    /> */}
-                    <button
-                        type="submit"
-                        className="btn btn-success btn-block"
-                    >Login</button>
-                </form>
+                <div className="main__login--logo-and-form-containers" >
+                    <div className="main__login--logo-container">
+                        <h1 className="main__login--logo-text">CHATUP</h1>
+                        <h2 className="main__login--logo-text-handle">Join the conversation</h2>
+                    </div>
+                    <div className="main__login--form-container">
+                        <h2 className="main__login--slogan">Share your ideas. Collaborate on projects. Make stuff that matters...</h2>
+                        <form className="main__login--form" onSubmit={this.submitHandler.bind(this)}>
+                            <input className="main__login--name-input"
+                                name="username"
+                                type="text"
+                                placeholder="ENTER YOUR NAME"
+                                onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = 'ENTER YOUR NAME'"
+                                ref={input => {this.usernameInput = input}}
+                            />
+                            {/* <input
+                                type="password"
+                                className="form-control"
+                                onChange={this.handlerPasswordChange.bind(this)}
+                                ref={this.userpasswordInput}
+                            /> */}
+                            <button
+                                type="submit"
+                                className="main__login--button"
+                            >Login</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }

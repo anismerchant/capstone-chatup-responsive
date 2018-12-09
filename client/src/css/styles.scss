@@ -1,3 +1,8 @@
+/* IMPORTS */
+
+@import "_variables.scss";
+@import "_mixins.scss";
+
 /* GLOBAL RESETS */
 * {
     margin: 0;
@@ -6,6 +11,83 @@
 }
 
 .main {
+
+    .main__login--containter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: $bg-color;
+        z-index: 1;
+        padding: 8rem;
+        
+        .main__login--logo-and-form-containers {
+            @include displyFlexColumnCenter();
+            width: 100vw;
+            height: 100vh;
+            
+            .main__login--logo-container {
+                @include displyFlexColumnCenter();
+                width: 100vw;
+                height: 10vh;
+                
+                .main__login--logo-text {
+                    color: $logo-text-color;
+                    font-family: $site-font-family;
+                    border-bottom: 1px solid #FFF;
+                }
+                .main__login--logo-text-handle {
+                    font-size: 0.8rem;
+                    color: $text-color;
+                }
+            }
+
+            .main__login--form-container {
+                @include displyFlexColumnCenter();
+                width: 100vw;
+                height: 90vh;
+                
+                .main__login--slogan {
+                    font-family: $site-font-family;
+                    font-size: 1rem;
+                    font-style: italic;
+                    color: $text-color;
+                    text-align: center;
+                    padding: 2%;
+                }
+
+                .main__login--form {
+                    
+                    button[type="submit"] {
+                        display: none;
+                    }
+
+                    input::placeholder {
+                        color: rgba(255,255,255, 0.9);
+                    }
+
+                    input {
+                        border: 2px solid #FFF;
+                        max-width: 25vw;
+                        height: 5vh;
+                        background-color: $bg-color;
+                        text-align: center;
+                        &:focus {
+                            outline:0;
+                            color: rgba(255,255,255, 0.9);
+                        }    
+                    }
+
+                }
+
+            }
+
+        }   
+    }
+
     .main__users {
         display: flex;
         justify-content: space-between;
@@ -37,5 +119,4 @@
         width: 100%;
     }
 }
-
 

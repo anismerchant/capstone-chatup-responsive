@@ -11,7 +11,7 @@ class ChatChildContainer extends Component {
         let messages=this.props.messages;
         let users=this.props.users;
         return (
-            <div className="main">
+            <div className="main__chatbox--container">
                 <div className="main__users">
                     <div className="main__users-online">
                         <h1 className="main__users-heading">Currently Online</h1>

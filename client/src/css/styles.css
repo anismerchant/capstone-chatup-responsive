@@ -1,9 +1,142 @@
+/* IMPORTS */
+/*** ALL DEVICES' VARIABLES ***/
+/* Typography */
+/* Color Schemes */
+/* Media Queries */
+/* Flexbox */
 /* GLOBAL RESETS */
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.main .main__login--containter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #7cc5c1;
+  z-index: 1;
+  padding: 8rem;
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 10vh;
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--logo-container .main__login--logo-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "lucida grande";
+  border-bottom: 1px solid #FFF;
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--logo-container .main__login--logo-text-handle {
+  font-size: 0.8rem;
+  color: #FFFFFF;
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 90vh;
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--slogan {
+  font-family: "lucida grande";
+  font-size: 1rem;
+  font-style: italic;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 2%;
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form button[type="submit"] {
+  display: none;
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form input::placeholder {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form input {
+  border: 2px solid #FFF;
+  max-width: 25vw;
+  height: 5vh;
+  background-color: #7cc5c1;
+  text-align: center;
+}
+
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form input:focus {
+  outline: 0;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .main .main__users {
