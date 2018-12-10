@@ -6,3 +6,10 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin placeholderTextDisappear()
+{
+    &::-webkit-input-placeholder {
+        opacity:0;
+    }
+}

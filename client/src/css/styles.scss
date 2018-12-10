@@ -92,6 +92,7 @@
                         &:focus {
                             outline:0;
                             color: rgba(255,255,255, 0.9);
+                            @include placeholderTextDisappear();
                         }
                         
                         @media(max-width: $mobile-max-width) {
@@ -284,6 +285,7 @@
                 &:focus {
                     outline:0;
                     color: #000;
+                    @include placeholderTextDisappear();
                 }    
             }
 

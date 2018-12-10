@@ -160,6 +160,10 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
 @media (max-width: 800px) {
   .main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form input {
     max-width: 60vw;
@@ -392,6 +396,10 @@
 .main .main__chatbar--container .main__chatbar-form input:focus {
   outline: 0;
   color: #000;
+}
+
+.main .main__chatbar--container .main__chatbar-form input:focus::-webkit-input-placeholder {
+  opacity: 0;
 }
 
 .main .main__chatbar--container .main__chatbar-form button[type="submit"] {
