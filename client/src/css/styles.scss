@@ -38,7 +38,7 @@
                 @include displyFlexColumnCenter();
                 width: 100vw;
                 height: 10vh;
-                
+
                 .main__login--logo-text {
                     color: $logo-text-color;
                     font-family: $site-font-family;
@@ -54,6 +54,10 @@
                 @include displyFlexColumnCenter();
                 width: 100vw;
                 height: 90vh;
+
+                @media(max-width: $mobile-max-width) {
+                    height: 60vh;
+                }
                 
                 .main__login--slogan {
                     font-family: $site-font-family;
@@ -62,6 +66,11 @@
                     color: $text-color;
                     text-align: center;
                     padding: 2%;
+                    
+
+                    @media(max-width: $mobile-max-width) {
+                        padding: 5%;
+                    }
                 }
 
                 .main__login--form {
@@ -83,7 +92,15 @@
                         &:focus {
                             outline:0;
                             color: rgba(255,255,255, 0.9);
-                        }    
+                        }
+                        
+                        @media(max-width: $mobile-max-width) {
+                            max-width: 60vw;
+                            input:focus {
+                                outline:0;
+                                color: rgba(255,255,255, 0.6);
+                            }
+                        }
                     }
 
                 }
@@ -104,6 +121,10 @@
             @include displyFlexColumnCenter();
             width: 100%;
             height: 10%;
+
+            @media(max-width: $mobile-max-width) {
+                height: 15%;
+            }
             
             .main__login--logo-text {
                 color: $text-color-chatroom-headings;
@@ -124,18 +145,35 @@
             border-bottom: $border-chatroom;
             padding-top: 2%;
 
+            @media(max-width: $mobile-max-width) {
+                height: 80%;
+                padding-top:5%;
+            }
+
             /* CURRENTLY ONLINE USERS */
             .main__users-online-section {
                 width: 25%;
                 border-right: $border-chatroom;
+
+                @media(max-width: $mobile-max-width) {
+                   width: 40%;
+                }
 
                 .main__users-heading {
                     font-size: 0.9rem;
                     padding-bottom: 5%;
                     color: $text-color-chatroom-headings;
 
+                    @media(max-width: $mobile-max-width) {
+                        font-size: 0.7rem;
+                    }
+
                     span {
                         padding-left: 10%;
+
+                        @media(max-width: $mobile-max-width) {
+                            padding-left: 4%;
+                        }
                     }
                 }
                 .main__users--currently-online {
@@ -147,6 +185,11 @@
 
                         span {
                             padding-left: 10%;
+
+                            @media(max-width: $mobile-max-width) {
+                                font-size: 0.7rem;
+                                padding-left: 4%;
+                            }
                         }
                     }
                 }
@@ -156,13 +199,25 @@
             .main__users-chatroom {
                 width: 80%;
 
+                @media(max-width: $mobile-max-width) {
+                    width: 60%;
+                 }
+
                 .main__users-chatroom-heading {
                     font-size: 0.9rem;
                     padding-bottom: 2%;
                     color: $text-color-chatroom-headings;
 
+                    @media(max-width: $mobile-max-width) {
+                        font-size: 0.7rem;
+                    }
+
                     span {
                         padding-left: 2%;
+
+                        @media(max-width: $mobile-max-width) {
+                            padding-left: 4%;
+                        }
                     }
                 }
 
@@ -170,10 +225,20 @@
 
                     .main-area__user-name {
                         font-size: 0.9rem;
+
+                        @media(max-width: $mobile-max-width) {
+                            font-size: 0.7rem;
+                            padding: 4% 0 4% 2%;
+                        }
                     }
                     .main-area__user-message{
                         font-size: 0.9rem;
                         font-weight: lighter;
+
+                        @media(max-width: $mobile-max-width) {
+                            font-size: 0.7rem;
+                            padding: 0 0 4% 2%;
+                        }
                     }
                 }
 
