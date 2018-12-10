@@ -42,6 +42,12 @@ class Main extends Component {
     })
   }
 
+  componentWillUnMount() {
+    this.io.on("disconnect", () => {
+      socket.on("loggedInUser", () => console.log("Client disconnected"));
+  })
+}
+
   addMessages = (data) => {
   
     let newMsg = {userName: data.userName, message: data.msg, timeStamp: data.timeStamp, socketId: data.socketId};
@@ -76,14 +82,13 @@ class Main extends Component {
 
   loggedInUser = (user) => {
     this.setState({userName: user}, () => {
-      socket.emit("loggedInUser", {userName: user} )
+      socket.emit("loggedInUser", {userName: user, socketId:socket.id} )
     });
   }
 
   allLoggedInUser = (user) => {
-    let newUser = {userName: user.userName}
-    this.setState((prevState) => ({
-      users: [...prevState.users, newUser]}
+    this.setState(() => ({
+      users: user}
     ))
   }
   
