@@ -33,8 +33,6 @@ class Login extends Component {
                                 name="username"
                                 type="text"
                                 placeholder="ENTER YOUR NAME"
-                                onfocus="this.placeholder = ''"
-                                onblur="this.placeholder = 'ENTER YOUR NAME'"
                                 ref={input => {this.usernameInput = input}}
                             />
                             {/* // For future development.
