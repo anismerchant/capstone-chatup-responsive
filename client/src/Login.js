@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header';
 
 class Login extends Component {
     constructor(props) {
@@ -24,10 +25,7 @@ class Login extends Component {
         return (
             <div className="main__login--containter">
                 <div className="main__login--logo-and-form-containers" >
-                    <div className="main__login--logo-container">
-                        <h1 className="main__login--logo-text">CHATUP</h1>
-                        <h2 className="main__login--logo-text-handle">Join the conversation</h2>
-                    </div>
+                   <Header />
                     <div className="main__login--form-container">
                         <h2 className="main__login--slogan">Share your ideas. Collaborate on projects. Make stuff that matters...</h2>
                         <form className="main__login--form" onSubmit={this.submitHandler.bind(this)}>
