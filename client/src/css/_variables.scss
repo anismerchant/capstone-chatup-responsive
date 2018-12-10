@@ -8,8 +8,16 @@ $font-weight-normal: normal;
 
 /* Color Schemes */
 $text-color: #FFFFFF;
+$place-holder-color: rgb(124, 197, 193);
 $bg-color: rgb(124, 197, 193);
+$bg-color-participants-msg: rgba(137, 252, 246, 0.5);
 $logo-text-color: rgba(255,255,255, 0.9);
+$text-color-chatroom-headings: rgb(124, 197, 193);
+$border: 1px solid rgb(124, 197, 193);
+$border-with-opacity: 1px solid rgba(124, 197, 193, 0.5);
+$border-chatroom: 1px solid rgb(124, 197, 193);
+$online-user-name-colors: rgb(140, 79, 76);
+$chatroom-bg-color: #f7f5b633;
 
 /* Media Queries */
 $mobile-max-width: 800px;

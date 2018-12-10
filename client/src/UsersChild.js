@@ -7,10 +7,7 @@ class UsersChild extends Component {
 
     render() {
         return (
-            <div>
-                <h6 className="main-area__usernames">{this.props.loggedInUser}</h6>
-            </div>
-            
+            <h6 className="main__users--usernames"><span>{this.props.loggedInUser}</span></h6>
         );
     }
  

@@ -11,14 +11,18 @@
 }
 
 .main {
+    width: 100vw;
+    height: 100vh;
+    border: $border;
 
+    /* LOGIN PAGE */
     .main__login--containter {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         position: fixed;
         background-color: $bg-color;
         z-index: 1;
@@ -28,7 +32,8 @@
             @include displyFlexColumnCenter();
             width: 100vw;
             height: 100vh;
-            
+
+             /* HEADER SECTION */
             .main__login--logo-container {
                 @include displyFlexColumnCenter();
                 width: 100vw;
@@ -88,35 +93,140 @@
         }   
     }
 
-    .main__users {
-        display: flex;
-        justify-content: space-between;
-        height: 95vh;
-        border-bottom: 1px solid black;
+    /* MAIN CHAT ROOM */
+    
+    .main__chatbox--container {
+        width: 100%;
+        height: 90%;
 
-        .main__users-online {
-            width: 50%;
-            border-right: 1px solid black;
-            padding-left: 2%;
-        }
-        .main__users-chatroom {
-            width: 50%;
-            padding-left: 2%;
-        }       
-    }
-    .main__chatbar-form {
-        width: 100%;
-        .main__chatbar--name-input{
+        /* HEADER SECTION */
+        .main__login--logo-container {
+            @include displyFlexColumnCenter();
             width: 100%;
-            padding-left: 1%;
+            height: 10%;
+            
+            .main__login--logo-text {
+                color: $text-color-chatroom-headings;
+                font-family: $site-font-family;
+                border-bottom: $border;
+            }
+            .main__login--logo-text-handle {
+                font-size: 0.8rem;
+                color: $text-color-chatroom-headings;
+            }
         }
-        .main__chatbar--form-input {
+
+        .main__users {
+            display: flex;
+            justify-content: space-between;
             width: 100%;
-            padding-left: 1%;
+            height: 90%;
+            border-bottom: $border-chatroom;
+            padding-top: 2%;
+
+            /* CURRENTLY ONLINE USERS */
+            .main__users-online-section {
+                width: 25%;
+                border-right: $border-chatroom;
+
+                .main__users-heading {
+                    font-size: 0.9rem;
+                    padding-bottom: 5%;
+                    color: $text-color-chatroom-headings;
+
+                    span {
+                        padding-left: 10%;
+                    }
+                }
+                .main__users--currently-online {
+                    
+                    .main__users--usernames {
+                        font-size: 0.9rem;
+                        padding: 3% 0;
+                        border-bottom: $border-with-opacity;
+
+                        span {
+                            padding-left: 10%;
+                        }
+                    }
+                }
+            }
+            
+            /* PUBLIC CHAT ROOM */
+            .main__users-chatroom {
+                width: 80%;
+
+                .main__users-chatroom-heading {
+                    font-size: 0.9rem;
+                    padding-bottom: 2%;
+                    color: $text-color-chatroom-headings;
+
+                    span {
+                        padding-left: 2%;
+                    }
+                }
+
+                .main__users-chatroom-participant {
+
+                    .main-area__user-name {
+                        font-size: 0.9rem;
+                    }
+                    .main-area__user-message{
+                        font-size: 0.9rem;
+                        font-weight: lighter;
+                    }
+                }
+
+                .white {
+                    padding-left: 2%;
+                }
+
+                .teal {
+                    background-color: $bg-color-participants-msg;
+                    padding-left: 2%;
+                }
+            }       
+        }
+
+    }
+    
+    .main__chatbar--container {
+        width: 100%;
+        height: 10%;
+        // background-color: #c1bc2533;
+
+        .main__chatbar-form {
+            width: 100%;
+            height: 50%;
+
+            .main__chatbar--form-input {
+                width: 100%;
+                padding-left: 1%;
+            }
+            .main__chatbar--form-msg-submit {
+                width: 100%;
+            }
+
+            input::placeholder {
+                color: $place-holder-color;
+            }
+
+            input {
+                max-width: 100%;
+                height: 100%;
+                text-align: left;
+                border: none;
+                &:focus {
+                    outline:0;
+                    color: #000;
+                }    
+            }
+
+            button[type="submit"] {
+                display: none;
+            }
         }
     }
-    .main__chatbar--form-msg-submit {
-        width: 100%;
-    }
+   
 }
 
