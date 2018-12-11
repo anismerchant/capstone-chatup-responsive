@@ -5,7 +5,7 @@ import ChatChildContainer from './ChatChildContainer';
 import Login from './Login';
 
 //const io = require('socket.io-client');
-let socket = io.connect(`http://localhost:8080`);
+let socket = io.connect(`https://chatup-app-responsive.herokuapp.com/`);
 let time = new Date().getTime();
 
 class Main extends Component {
@@ -17,7 +17,7 @@ class Main extends Component {
     this.messageInput = React.createRef();
 
     this.state = {
-      url: "http://localhost:8080",
+      url: "https://chatup-app-responsive.herokuapp.com/",
       messages: [],
       userName: "",
       users:[],
