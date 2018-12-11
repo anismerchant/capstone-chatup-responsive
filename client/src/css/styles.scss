@@ -199,6 +199,8 @@
             /* PUBLIC CHAT ROOM */
             .main__users-chatroom {
                 width: 80%;
+                overflow: scroll;
+                overflow-x: hidden;
 
                 @media(max-width: $mobile-max-width) {
                     width: 60%;
