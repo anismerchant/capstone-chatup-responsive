@@ -42,11 +42,12 @@ class Main extends Component {
     })
   }
 
-  componentWillUnMount() {
-    this.io.on("disconnect", () => {
-      socket.on("loggedInUser", () => console.log("Client disconnected"));
-  })
-}
+//   componentWillUnMount() {
+//     this.io.on("disconnect", () => {
+//       // socket.disconnect("loggedOutUser", () => console.log("Client disconnected"));
+//     socket.disconnect();  
+//   })
+// }
 
   addMessages = (data) => {
   
