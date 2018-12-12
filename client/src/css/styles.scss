@@ -74,9 +74,21 @@
                 }
 
                 .main__login--form {
+                    display: flex;
+                    flex-direction: column;
                     
                     button[type="submit"] {
-                        display: none;
+                        border: 2px solid #FFF;
+                        margin-top: 4%;
+                        height: 4vh;
+                        background-color: rgb(146, 218, 214);
+                        text-align: center;
+                        color: rgba(255,255,255, 1);
+                        font-size: 1.2rem;
+                        &:focus{
+                            outline:0;
+                            color: rgba(255,255,255, 0.9);
+                        }
                     }
 
                     input::placeholder {
@@ -86,9 +98,10 @@
                     input {
                         border: 2px solid #FFF;
                         max-width: 25vw;
-                        height: 5vh;
+                        height: 8vh;
                         background-color: $bg-color;
                         text-align: center;
+                        font-size: 1.2rem;
                         &:focus {
                             outline:0;
                             color: rgba(255,255,255, 0.9);
@@ -186,9 +199,10 @@
 
                         span {
                             padding-left: 10%;
+                            font-size: 1.2rem;
 
                             @media(max-width: $mobile-max-width) {
-                                font-size: 0.7rem;
+                                font-size: 1.2rem;
                                 padding-left: 4%;
                             }
                         }
@@ -227,19 +241,19 @@
                 .main__users-chatroom-participant {
 
                     .main-area__user-name {
-                        font-size: 0.9rem;
+                        font-size: 1.2rem;
 
                         @media(max-width: $mobile-max-width) {
-                            font-size: 0.7rem;
+                            font-size: 1.2rem;
                             padding: 4% 0 4% 2%;
                         }
                     }
                     .main-area__user-message{
-                        font-size: 0.9rem;
+                        font-size: 1.2rem;
                         font-weight: lighter;
 
                         @media(max-width: $mobile-max-width) {
-                            font-size: 0.7rem;
+                            font-size: 1.2rem;
                             padding: 0 0 4% 2%;
                         }
                     }
@@ -270,6 +284,7 @@
             .main__chatbar--form-input {
                 width: 100%;
                 padding-left: 1%;
+                font-size: 1.2rem;
             }
             .main__chatbar--form-msg-submit {
                 width: 100%;
@@ -277,6 +292,7 @@
 
             input::placeholder {
                 color: $place-holder-color;
+                font-size: 1.2rem;
             }
 
             input {
