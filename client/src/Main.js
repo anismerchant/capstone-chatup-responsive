@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import ChatChildContainer from './ChatChildContainer';
 import Login from './Login';
 
-let socket = io.connect(`localhost:8080`);
+let socket = io.connect("http://10.32.6.35:8080");
 let time = new Date().getTime();
 
 class Main extends Component {
@@ -15,7 +15,7 @@ class Main extends Component {
     this.messageInput = React.createRef();
 
     this.state = {
-      url: "localhost:8080",
+      url: "http://10.32.6.35::8080",
       messages: [],
       userName: "",
       users:[],
