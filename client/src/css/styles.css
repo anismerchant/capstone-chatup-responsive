@@ -138,9 +138,9 @@
 }
 
 .main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form button[type="submit"] {
-  border: 2px solid #FFF;
+  border: none;
   margin-top: 4%;
-  height: 4vh;
+  height: 8vh;
   background-color: #92dad6;
   text-align: center;
   color: white;
@@ -149,7 +149,6 @@
 
 .main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form button[type="submit"]:focus {
   outline: 0;
-  color: rgba(255, 255, 255, 0.9);
 }
 
 .main .main__login--containter .main__login--logo-and-form-containers .main__login--form-container .main__login--form input::-webkit-input-placeholder {

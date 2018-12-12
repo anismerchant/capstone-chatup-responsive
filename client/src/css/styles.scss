@@ -78,16 +78,15 @@
                     flex-direction: column;
                     
                     button[type="submit"] {
-                        border: 2px solid #FFF;
+                        border: none;
                         margin-top: 4%;
-                        height: 4vh;
+                        height: 8vh;
                         background-color: rgb(146, 218, 214);
                         text-align: center;
                         color: rgba(255,255,255, 1);
                         font-size: 1.2rem;
                         &:focus{
                             outline:0;
-                            color: rgba(255,255,255, 0.9);
                         }
                     }
 
