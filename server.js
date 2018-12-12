@@ -12,15 +12,12 @@ io.on('connection', (socket) => {
     socket.on("message", (message) => {
         console.log("Response from client: ", message);
         messages.push(message); 
-        // socket.broadcast.emit("message", message);
         io.sockets.emit("message", message);
     })
 
     socket.on("loggedInUser", (loggedInUser) => {
         console.log("Response from client: ", loggedInUser);
         users.push(loggedInUser);
-      
-        // socket.broadcast.emit("loggedInUser", loggedInUser);
         io.sockets.emit("loggedInUser", users);
     })
 
@@ -28,11 +25,7 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', function () {
         console.log('client disconnected' + socket.id);
-        //console.log(users);
-        
-        // let disconnectUserSocketId = socket.send(socket.id);
         users =  users.filter((user) => {return String(user.socketId) !== String(socket.id);});
-        //console.log(disconnectUser);
         io.sockets.emit("loggedInUser", users);
     });
 
