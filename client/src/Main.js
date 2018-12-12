@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-
 import ChatChildContainer from './ChatChildContainer';
 import Login from './Login';
 
-//const io = require('socket.io-client');
-let socket = io.connect(`http://10.32.6.35:8080`);
+let socket = io.connect(`localhost:8080`);
 let time = new Date().getTime();
 
 class Main extends Component {
@@ -17,7 +15,7 @@ class Main extends Component {
     this.messageInput = React.createRef();
 
     this.state = {
-      url: "http://10.32.6.35:8080",
+      url: "localhost:8080",
       messages: [],
       userName: "",
       users:[],
@@ -29,15 +27,10 @@ class Main extends Component {
     this.initSocket();
 
     this.io.on("message", (data) => {
-      console.log("Incoming username from other user: " + data.userName);
-      console.log("Incoming Message from other user: " + data.msg);
-      console.log("Incoming timestamp from other user: " + data.timeStamp);
-      console.log("Incoming SocketId from other user: " + data.socketId);
       this.addMessages(data);
     })
 
     this.io.on("loggedInUser", (data) => {
-      console.log("Incoming username from other user: " + data.userName);
       this.allLoggedInUser(data);
     })
   }
@@ -58,7 +51,7 @@ class Main extends Component {
     this.io = io(this.state.url);
   }
 
-  //1. User enters chatroom
+  // User enters chatroom
   sendMessage = (e) => {
     e.preventDefault();
     let userInput = this.messageInput.current.value;
@@ -71,7 +64,7 @@ class Main extends Component {
     }
   }
 
-  //2. Hide login component after user shares name
+  // Hide login component after user shares name
   hideLogin = () => {
     this.setState({
       showLogin: false
