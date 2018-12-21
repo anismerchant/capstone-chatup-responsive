@@ -46,7 +46,7 @@ class Login extends Component {
                             <button
                                 type="submit"
                                 className="main__login--button"
-                            >Login</button>
+                            >Join</button>
                         </form>
                     </div>
                 </div>
