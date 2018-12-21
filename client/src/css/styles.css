@@ -265,6 +265,8 @@
 .main .main__chatbox--container .main__users .main__users-online-section {
   width: 25%;
   border-right: 1px solid #7cc5c1;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 @media (max-width: 800px) {
