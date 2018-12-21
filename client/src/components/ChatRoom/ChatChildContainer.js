@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import ChatChild from './ChatChild';
 import UsersChild from './UsersChild';
-import Header from './Header';
+import Header from '../Header/Header';
 
 class ChatChildContainer extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let messages=this.props.messages;
         let users=this.props.users;

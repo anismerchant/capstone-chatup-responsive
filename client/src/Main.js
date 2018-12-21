@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-import ChatChildContainer from './ChatChildContainer';
-import Login from './Login';
+import ChatChildContainer from './components/ChatRoom/ChatChildContainer';
+import Login from './components/Login/Login';
 
 let socket = io.connect("localhost:8080");
 let time = new Date().getTime();
