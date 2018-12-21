@@ -13,4 +13,4 @@ If you'd like try it out, feel free to message me and I'll share with you a link
 
 # Screenshots
 
-(To come...)
+![capstone-chatup-responsive-img](https://user-images.githubusercontent.com/5770541/50322857-103c1a00-04a5-11e9-83ac-c1e00d50417d.png)
