@@ -23,6 +23,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "proxy": "http://10.32.6.35:3000"
+  ]
 }
